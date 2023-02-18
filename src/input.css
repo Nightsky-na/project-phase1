@@ -1,10 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
-/* @font-face {
+@font-face {
     font-family: 'Nunito', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
     font-weight: normal;
     font-style: normal;
-} */
+}
