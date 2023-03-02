@@ -43,3 +43,4 @@ module.exports = {
     require('@tailwindcss/forms')
   ],
 }
+// https://github.com/tailwindlabs/tailwindcss-forms

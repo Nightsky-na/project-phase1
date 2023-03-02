@@ -20,5 +20,12 @@ router.get('/product', (req, res) => {
     res.sendFile('adminProduct.html', { root: __dirname + '/../public/html/' });
 });
 
+router.get('/user-add', (req, res) => {
+    res.sendFile('adminAddUser.html', { root: __dirname + '/../public/html/' });
+});
+
+router.get('/product-add', (req, res) => {
+    res.sendFile('adminAddProduct.html', { root: __dirname + '/../public/html/' });
+});
 
 module.exports = router;
