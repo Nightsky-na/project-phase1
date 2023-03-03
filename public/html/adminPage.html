@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>User management page - Little gift</title>
     <link rel="stylesheet" href="../dist/output.css">
 </head>
 
 <body>
+    <!-- navbar -->
     <header class="w-screen sticky z-50 top-0 ">
         <nav class=" bg-[#8DACF2] sticky z-50 top-0 rounded-b-[40px]">
             <!-- Desktop  -->
@@ -69,11 +69,12 @@
             </div>
         </nav>
     </header>
+    <!-- content -->
     <main class="relative mt-[-64px] bg-[#FBF5F1] h-full w-full">
         <div class="bg-gradient-to-b from-navy-700 z-10 w-screen h-full pt-[64px]">
             <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                <!-- Replace with your content -->
                 <div class="flex flex-row items-center justify-between" >
+                    <!-- admin name -->
                     <div class="flex flex-row gap-5 items-center">
                         <div class="w-[50px] h-[5 0px]">
                             <img src="../assets/logo/adminProfile.png" alt="" srcset="">
@@ -82,10 +83,12 @@
                             Admin: Kontawat Wisetpaitoon
                         </div>
                     </div>
+                    <!-- btn add user -->
                     <div>
                         <a class="text-white bg-[#2E7DE8] p-2 rounded-[5px] shadow-md mx-3 transition delay-150 duration-300  hover:border-white hover:border-2 hover:ease-in-out" href="/admin/user-add" >Add User +</a>
                     </div>
                 </div>
+                <!-- Table user  -->
                 <div class="mt-5 mx-5 text-xl text-[#38435d] underline font-semibold">
                     <h1>User management</h1>
                 </div>
