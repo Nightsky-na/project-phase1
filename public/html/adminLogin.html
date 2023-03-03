@@ -1,22 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    
     <title>Login page - Little gift</title>
-    <link rel="stylesheet" href="../../dist/output.css">
+    <link rel="stylesheet" href="../dist/output.css">
 </head>
+
 <body>
-    <main>
-        <div class="bg-cream-100 h-screen w-screen flex flex-row justify-end items-center font-nunito pr-10">
+    <!-- navbar -->
+    <header class="w-screen sticky z-50 top-0 ">
+        <nav class=" bg-navy-100 sticky z-50 top-0 rounded-b-[40px]">
+            <!-- Desktop  -->
+            <div class="mx-2 max-w-8xl px-2 sm:px-6 lg:px-8">
+                <div class="relative flex h-16 items-center justify-between ">
+                    <div
+                        class="flex flex-1 items-center justify-center  m:items-stretch sm:justify-between sm:w-screen">
+                        <!-- logo -->
+                        <div class="flex flex-shrink-0 items-center justify-self-start">
+                            <img src="../assets/images/nantarat-little-gift-logo-white.png" class="block lg:hidden w-28 mr-2">
+                            <img src="../assets/images/nantarat-little-gift-logo-white.png" class="hidden lg:block w-28 ">
+                            <div
+                                class="hidden sm:transition-all sm:block sm:w-[140px] md:transition-all md:w-[240px] lg:transition-all lg:w-[340px]">
+                                <input type="text" class="form-input w-full mx-2 px-4 py-2 rounded-full"
+                                    placeholder="Search...">
+                            </div>
+                        </div>
+                        <!-- search input -->
+                        <!-- <input type="email" class="form-input px-4 py-3 rounded-full"> -->
+                        <!-- <div class="hidden sm:ml-6  sm:block sm:justify-items-end">
+                        </div> -->
+                        <!-- list nav -->
+                        <div class="hidden sm:ml-6  sm:block sm:justify-items-end">
+                            <div class="flex flex-1 space-x-4">
+                                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                                <a href="/" 
+                                    class="bg-navy-300 text-white  px-3 py-2 rounded-md text-sm font-medium"  aria-current="page"
+                                    >Home</a>
+                                    
+                                    <a href="/shop/"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    >Product</a>
+                                
+                                <a href="/search"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"  aria-current="page">Search</a>
+                                
+                                <a href="/about"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About us</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="sm:hidden" id="mobile-menu" style="display: none;">
+                <div class="space-y-1 px-2 pt-2 pb-3">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+                        aria-current="page">Home</a>
+
+                    <a href="/shop/"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Product</a>
+
+                    <a href="/search"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Search</a>
+
+                    <a href="/about"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About
+                        us</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- content -->
+    <main class="mt-[-64px] bt-[64px]">
+        <div class="pt-[64px] bg-[url('../assets/images/bg-admin-login.png')] h-screen w-screen flex flex-row justify-end items-center font-nunito pr-10">
             <!-- login -->
-            <div class="bg-white w-[50%] h-[90%] px-20 rounded-[40px] shadow-xl flex flex-col justify-start font-nunito md:w-[40%]">
+            <div
+                class="bg-white  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-80 border transition-all
+                w-[100%] h-[90%] px-20 rounded-[40px] shadow-xl flex flex-col justify-start font-nunito lg:w-[30%] md:w-[65%] sm:w-[40%]">
                 <!-- logo -->
-                <div class="m-2 justify-center flex flex-row px-[-10px] "> 
-                    <img src="../assets/images/nantarat-little-gift-logo.png" >
+                <div class="m-3 justify-center flex flex-row px-[-10px]">
+                    <img class="my-2 h-[90%] sm:scale-90 sm:h-[100%] md:h-[80%]"
+                        src="../assets/images/nantarat-little-gift-logo.png"> 
                 </div>
                 <!-- form -->
                 <div class="flex flex-col gap-4">
@@ -45,8 +115,9 @@
                             p-3
                             focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                         </div>
-                        <a href="" class="text-sm -pt-4 hover:underline" >Forgot Password?</a>
-                        <div class="font-nunito bg-navy-100 w-full my-6 p-3 rounded-md text-white font-bold justify-center items-center flex text-xl transition-all hover:underline hover:shadow-lg">
+                        <a href="" class="text-sm -pt-4 hover:underline">Forgot Password?</a>
+                        <div
+                            class="font-nunito bg-navy-100 w-full my-6 p-3 rounded-md text-white font-bold justify-center items-center flex text-xl transition-all hover:underline hover:shadow-lg">
                             <button type="submit">Sign in</button>
                         </div>
                     </form>
@@ -55,21 +126,25 @@
                 <div class="flex flex-col justify-center items-center">
                     <span class="text-[#2A1E17]"> or continue with</span>
                     <!-- logo google and facebook -->
-                    <div class="flex flex-row items-center justify-center p-3 m-5 gap-7 bg-cream-100 w-[60%] rounded-[40px]">
+                    <div
+                        class="flex flex-row items-center justify-center p-3 m-5 gap-7 bg-cream-100 w-[60%] rounded-[40px]">
                         <a href="https://www.google.com/">
-                            <img src="../assets/logo/google-logo.png" class="w-8 h-8 mx-5 transition-all hover:scale-110">
+                            <img src="../assets/logo/google-logo.png"
+                                class="w-8 h-8 mx-5 transition-all hover:scale-110">
                         </a>
                         <a href="https://www.facebook.com/" class="">
-                            <img src="../assets/logo/facebook-logo.png" class="w-8 h-8 mx-5 transition-all hover:scale-110">
+                            <img src="../assets/logo/facebook-logo.png"
+                                class="w-8 h-8 mx-5 transition-all hover:scale-110">
                         </a>
                     </div>
                     <div>
                         <span class="text-sm">Don't have an account? &nbsp;</span>
-                        <a href="" class="text-sm font-bold hover:underline" >Sign up</a>
+                        <a href="" class="text-sm font-bold hover:underline">Sign up</a>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 </body>
+
 </html>
