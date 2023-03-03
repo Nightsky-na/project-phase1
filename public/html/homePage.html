@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../dist/output.css">
 </head>
 
-<body class="">
+<body class="overflow-x-hidden">
     <header class="w-screen sticky z-50 top-0 ">
         <nav class=" bg-navy-100 sticky z-50 top-0 rounded-b-[40px]">
             <!-- Desktop  -->
@@ -76,9 +76,9 @@
             </div>
         </nav>
     </header>
-    <main class="relative mt-[-64px]">
+    <main class="relative mt-[-64px] ">
         <!-- page1 -->
-        <div class="bg-cream-100 z-10 w-screen h-screen flex flex-col pt-[64px] ">
+        <div class="bg-cream-100 z-10 w-screen max-h-7xl h-screen flex flex-col pt-[64px] ">
             <!-- Top page 1 -->
             <div class="h-[90vh] flex justify-between flex-row  m-2 mt-10 mx-6 rounded-t-[50px] bg-gradient-to-b from-navy-700">
                 <!-- text -->
@@ -140,23 +140,56 @@
             </div>
         </div>
         <!-- page2 -->
-        <div class="bg-cream-900 z-10 w-screen h-screen pt-[64px]">
-            <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                <div class="px-4 py-6 sm:px-0">
-                    <div class="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
+        <div class="bg-gradient-to-tr from-navy-700 z-10  w-screen max-h-7xl h-[130vh]">
+            <div class="w-[90%] mx-10 py-6 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-semibold text-[#2F4F72] drop-shadow-lg underline">Our Materials</h1>
+                <div class="flex  flex-col">
+                    <div class="flex flex-row">
+                        <div class="flex-shrink-0">
+                            <img class="object-cover h-full w-full"  src="../assets/images/indigo-base.png" alt="">
+                        </div>
+                        <div class="flex flex-col gap-3 pl-2">
+                            <h1 class="text-white text-xl font-semibold w-fit rounded-md bg-[#4F5C90] p-2 ">Natural Indigo</h1>
+                            <div class="text-[#4F5C90] drop-shadow-md">
+                                Natural indigo powder is derived from the Indigofera tinctoria plant and is known for its ability to produce a range of shades of blue that are colorfast. This dye plant is widespread, but it thrives particularly well in hot tropical regions, and its versatility has made it the most successful dye plant in history.
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- /End replace -->
             </div>
         </div>
         
         <!-- page3 -->
-        <div class="bg-cream-100 z-10 w-screen h-screen pt-[64px]">
+        <!-- <div class="bg-cream-100 z-10 w-screen h-screen pt-[64px]">
             <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
                 <div class="px-4 py-6 sm:px-0">
                     <div class="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
                 </div>
-                <!-- /End replace -->
             </div>
+        </div> -->
+        <img class="z-10 absolute overflow-hidden w-full left-0 right-0 bottom-[19vh]"  src="../assets/images/footer-decorate.png" >
+        <div class="z-10 relative bg-[#657AAA] h-[20vh]">
+            <footer class="text-white flex justify-between gap-3 m-10 p-4">
+                <div class="w-[40%]">
+                    <h3 class="font-medium"> MENU</h3>
+                    <hr class="pb-3">
+                    <ul class="list-none flex flex-col gap-1">
+                        <a href="/" >Home</a>
+                        <a href="/shop/">Products</a>
+                        <a href="/search">Search</a>
+                        <a href="/about" >About Us</a>
+                </div>
+                <div class="w-[40%]">
+                    <h3 class="font-medium"> SHOP </h3>
+                    <hr class="pb-3">
+                    <ul class="list-none flex flex-col gap-1">
+                        <a href="/shop/">Keychain</a>
+                        <a href="/shop/">Accessories</a>
+                        <a href="/shop/">Bag</a>
+                        <a href="/shop/">Other</a>
+                    </ul>
+                </div> 
+            </footer>
         </div>
     </main>
 </body>
