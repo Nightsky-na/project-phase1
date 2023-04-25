@@ -1,4 +1,5 @@
 # project-phase1
+
 **Kontawat Wisetpaitoon 6388154**
 Explore and design the first draft of your web application using HTML and CSS.
 
@@ -48,3 +49,12 @@ Home page route|home page|homePage.html|https://kontawatdev.com/
 ​​Admin Add/Edit User  page|admin add, modify  for user|adminAddUser.html|https://kontawatdev.com/admin/user-add
 ​​Admin Add/Edit Product  page|admin add, modify  for Product|adminAddProduct.html| https://kontawatdev.com/admin/product-add
 ​
+=======
+* Explore and design the first draft of your web application using HTML and CSS.
+
+## 🔗 Links and Resources
+| Type                            | Links                               |
+| ------------------------------- | --------------------------------------- |
+| 💼 **Documentation**              | [ReadTheDocs](https://kontawats-organization.gitbook.io/nantarat-little-gift/)
+| 🚀 **Website**            | [Website demo](https://kontawatdev.com/)
+
