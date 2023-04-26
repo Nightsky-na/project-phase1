@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../dist/output.css">
+    
+</head>
+<body>
+    <header class="w-screen sticky z-50 top-0 ">
+        <%- include('./partials/nav'); %>
+    </header>
+    <main class="relative mt-[-64px] h-full w-full">
+        <div class="z-50 pt-[90px] p-7 bg-gradient-to-t from-navy-700 to-[#FBF5F1] h-[120vh] w-screen flex gap-10">
+            <!-- div sep to 2 col -->
+            <div class="w-[40%] flex flex-row gap-0 justify-start">
+                
+                <% if (product.image && product.image.data) { %>
+                    <% const base64Image = Buffer.from(product.image.data).toString('base64'); %>
+                    <div class="w-[90%] pl-8">
+                        <img class="rounded-lg" src="data:image/png;base64,<%= base64Image %>" alt="<%= product.name %>">
+                    </div>
+                <% } else { %>
+                    <div class="w-[90%] pl-8">
+                        <img class="rounded-lg" src="../../assets/images/No_Image_Available.jpg" alt="<%= product.name %>">
+                    </div>
+                <% } %>
+                
+                <!-- <div class="w-[20%] opacity-50 flex flex-col gap-3">
+                    <img class="rounded-lg" src="../../assets/products/goldfish/goldfish2.png" alt="">
+                    <img class="rounded-lg" src="../../assets/products/goldfish/goldfish2.png" alt="">
+                    <img class="rounded-lg" src="../../assets/products/goldfish/goldfish2.png" alt="">
+                    <img class="rounded-lg" src="../../assets/products/goldfish/goldfish2.png" alt="">
+                </div> -->
+            </div>
+            <div class="w-[40%] h-fit  bg-white p-10 rounded-2xl flex flex-col gap-3">
+                <div>
+                    <h1 class="text-3xl font-semibold text-[#4F5C90]"><%- product.name %></h1>
+                    <h2 class="text-base font-light text-[#4F5C90] "><%- product.type %></h2>
+                </div>
+                <h1 class="text-2xl font-medium text-[#4F5C90]"> THB. <%- product.price %></h1>
+                <div>
+                    <h3 class="text-base font-medium text-[#4F5C90]">Description</h3>
+                    <hr>
+                    <p class="text-base font-light text-[#4F5C90]">
+                        <%- product.description %>
+                    </p>
+                </div>
+                <div class="w-[20%]">
+                    <!-- quantity -->
+                    <h2 class="text-lg font-light text-[#657AAA]">Quantity</h2>
+                    <input type="number" min="1" max="99"class="mt-1 block w-full rounded-md bg-[#fbf5f100] border-[#657AAA] border focus:border-[#657AAA]  focus:ring-1" placeholder="1">
+
+                </div>
+                <a class="w-[70%] self-center  text-white bg-[#2E7DE8] p-2 rounded-[5px] shadow-md mx-3 transition delay-150 duration-300  hover:border-white hover:border-2 hover:ease-in-out mt-10 text-center" >ADD TO CART</a>
+
+            </div>
+        </div>
+        <img class="z-20 absolute overflow-hidden w-full left-0 right-0 bottom-[19vh]"  src="../../assets/images/footer-decorate.png" >
+        <%- include('./partials/footer'); %>
+    
+    </main>
+    
+</body>
+</html>

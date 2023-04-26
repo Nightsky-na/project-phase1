@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 1. add this to your header -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- ---------------- -------------------->
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Home page - Little gift</title>
     <link rel="stylesheet" href="../dist/output.css">
@@ -169,7 +173,13 @@
                 </div>
             </div>
         </div>
-        
+        <!-- page3 -->
+        <div class="bg-gradient-to-tr from-navy-700 z-10  w-screen max-h-7xl h-[160vh]">
+            <div class="w-[90%] mx-10 py-6 sm:px-6 lg:px-8 justify-center">
+                <div id='map' class=" w-[100%] h-[100vh] justify-center"></div>
+            </div>
+        </div>
+
         <!-- page3 -->
         <!-- <div class="bg-cream-100 z-10 w-screen h-screen pt-[64px]">
             <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
@@ -179,7 +189,7 @@
             </div>
         </div> -->
         <img class="z-10 absolute overflow-hidden w-full left-0 right-0 bottom-[19vh]"  src="../assets/images/footer-decorate.png" >
-        <div class="z-10 relative bg-[#657AAA] h-[20vh]">
+        <div class="z-10 relative bg-[#657AAA] h-[25vh]">
             <footer class="text-white flex justify-between gap-3 m-10 p-4">
                 <div class="w-[40%]">
                     <h3 class="font-medium"> MENU</h3>
@@ -204,5 +214,15 @@
         </div>
     </main>
 </body>
-
+<script>
+    // The value for 'accessToken' begins with 'pk...'
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZG91bmduYXB0MjciLCJhIjoiY2xndnRkZTNoMDZ4aTNocHNkODFoajBuayJ9.YC-qEWe5KFnaiBkAkBnz4g'; 
+        const map = new mapboxgl.Map({
+        container: 'map',
+        // Replace YOUR_STYLE_URL with your style URL.
+        style: 'mapbox://styles/doungnapt27/clgvufwft007301r087vvhxf5', 
+        // center: [13.797,100.323],
+        // zoom: 16.64
+        });
+</script>
 </html>

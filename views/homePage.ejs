@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 1. add this to your header -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- ---------------- -------------------->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <title>Home page - Little gift</title>
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+
+<body class="overflow-x-hidden">
+    <header class="w-screen sticky z-50 top-0 ">
+        <%- include('./partials/nav'); %>
+    </header>
+    <main class="relative mt-[-64px] ">
+        <!-- page1 -->
+        <div class="bg-cream-100 z-10 w-screen max-h-7xl h-screen flex flex-col pt-[64px] ">
+            <!-- Top page 1 -->
+            <div class="h-[90vh] flex justify-between flex-row  m-2 mt-10 mx-6 rounded-t-[50px] bg-gradient-to-b from-navy-700">
+                <!-- text -->
+                <div class="w-auto flex flex-col justify-start pt-[10vh] mx-10">
+                    <div class="font-nunito font-semibold text-5xl text-text-navy-200 drop-shadow-md pb-9">
+                        Spread love and creativity, <br>
+                        just <a class="text-text-navy-500 transition-all hover:underline hover:drop-shadow-xl" href="/">little gift</a>  at a time.
+                    </div>
+                    <div class="text-text-navy-100">
+                        Treat yourself or someone special to a little gift from Thailand's traditional handicrafts. 
+    Our collection of handmade products from Phrae Province showcases the finest of Thai craftsmanship, with each item carefully crafted by skilled artisans using time-honored techniques. We take pride in offering only the highest quality and most authentic products, bringing the beauty of Thai culture directly to you. 
+                    </div>
+                    <div class="mt-16">
+                        <a class="bg-text-navy-100 text-white font-semibold py-2 px-4 rounded-full mt-10 underline transition-all hover:shadow-2xl hover:underline" href="/shop/">
+                            Shop now
+                        </a>
+                    </div>
+                </div>
+                <!-- image -->
+                <div class="hidden transition-all md:block md:ml-10 md:w-[40vw] md:shrink-0 md:relative md:justify-end">
+                    <img class="absolute top-0 right-0 " src="../assets/images/fabric-pattern-1.png" alt="">
+                    <img class="absolute -top-4 scale-90" src="../assets/images/fabric-pattern-2.png" alt="">
+                </div>
+            </div>
+            <!-- B page 1  -->
+            <div class="flex flex-col md:flex-row md:m-2 md:mt-10 md:mb-10 md:mx-10 md:h-[20vh] md:justify-between">
+                <a class="bg-slate-600 text-2xl  flex flex-row justify-start align-middle rounded-[35px] h-[93%] w-1/5 shadow-sm overflow-hidden transition-all hover:shadow-2xl hover:underline hover:text-3xl" href="/shop/">
+                    <div class="inline-block align-middle font-medium text-center  text-white flex-1 mt-[17%] ">
+                        <span class="">Keychain</span>
+                    </div> 
+                    <div class="w-[40%]">
+                        <img class="object-cover h-full w-full"  src="../assets/images/fish-keychain-hanging.png" alt="">
+                    </div>
+                </a>
+                <a class="bg-[#DED8D2] text-2xl  flex flex-row justify-start align-middle rounded-[35px] h-[93%] w-1/5 shadow-sm overflow-hidden transition-all hover:shadow-2xl hover:underline hover:text-3xl" href="/shop/">
+                    <div class="inline-block align-middle font-medium text-center text-[#404159] flex-1 mt-[17%]">
+                        <span class="">Accessories</span>
+                    </div> 
+                    <div class="w-[40%]">
+                        <img class="object-cover h-full w-full"  src="../assets/images/fish-keychain-hanging.png" alt="">
+                    </div>
+                </a>
+                <a class="bg-[#4F5C90] text-2xl  flex flex-row justify-start align-middle rounded-[35px] h-[93%] w-1/5 shadow-sm overflow-hidden transition-all hover:shadow-2xl hover:underline hover:text-3xl" href="/shop/">
+                    <div class="inline-block align-middle font-medium text-center text-white flex-1 mt-[17%]">
+                        <span class="">Bag</span>
+                    </div> 
+                    <div class="w-[40%]">
+                        <img class="object-cover h-full w-full"  src="../assets/images/fish-keychain-hanging.png" alt="">
+                    </div>
+                </a>
+                <a class="bg-[#7490C3] text-2xl  flex flex-row justify-start align-middle rounded-[35px] h-[93%] w-1/5 shadow-sm overflow-hidden transition-all hover:shadow-2xl hover:underline hover:text-3xl" href="/shop/">
+                    <div class="inline-block align-middle font-medium text-center text-white flex-1 mt-[17%]">
+                        <span class="">Other</span>
+                    </div> 
+                    <div class="w-[40%]">
+                        <img class="object-cover h-full w-full"  src="../assets/images/fish-keychain-hanging.png" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- page2 -->
+        <div class="bg-gradient-to-tr from-navy-700 z-10  w-screen max-h-7xl h-[160vh]">
+            <div class="w-[90%] mx-10 py-6 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-semibold text-[#2F4F72] drop-shadow-lg underline">Our Materials</h1>
+                <div class="flex  flex-col">
+                    <div class="flex flex-row">
+                        <div class="flex-shrink-0">
+                            <img class="object-cover h-full w-full drop-shadow-xl"  src="../assets/images/indigo-base-removebg-preview.png" alt="">
+                        </div>
+                        <div class="flex flex-col gap-3 pl-2">
+                            <h1 class="text-white text-xl font-semibold w-fit rounded-md bg-[#4F5C90] p-2 ">Natural Indigo</h1>
+                            <div class="text-[#4F5C90] drop-shadow-md">
+                                Natural indigo powder is derived from the Indigofera tinctoria plant and is known for its ability to produce a range of shades of blue that are colorfast. This dye plant is widespread, but it thrives particularly well in hot tropical regions, and its versatility has made it the most successful dye plant in history.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row">
+                        <div class="flex flex-col gap-3 pl-2">
+                            <h1 class="text-white text-xl font-semibold w-fit rounded-md bg-[#a77846] p-2 ">Unbleached Cloth</h1>
+                            <div class="text-[#856039] drop-shadow-md">
+                                Unbleached cloth is a type of fabric that has not been treated with any bleaching agents to make it white or lighter in color. Instead, it retains its natural, off-white or beige color, which can vary depending on the type of fiber used to make it.    
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img class="object-cover h-full w-full drop-shadow-xl"  src="../assets/images/unbleachedCloth.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- page3 -->
+        <div class="bg-gradient-to-tr from-navy-700 z-10  w-screen max-h-7xl h-[160vh]">
+            <div class="w-[90%] mx-10 py-6 sm:px-6 lg:px-8 justify-center">
+                <h1 class="font-nunito font-semibold text-5xl text-text-navy-200 drop-shadow-md pb-9 text-center">Our store</h1>
+                <div id='map' class=" w-[100%] h-[100vh] items-center justify-center"></div>
+            </div>
+        </div>
+
+        <!-- page3 -->
+        <!-- <div class="bg-cream-100 z-10 w-screen h-screen pt-[64px]">
+            <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                <div class="px-4 py-6 sm:px-0">
+                    <div class="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
+                </div>
+            </div>
+        </div> -->
+        <img class="z-10 absolute overflow-hidden w-full left-0 right-0 bottom-[19vh]"
+            src="../assets/images/footer-decorate.png">
+        <%- include('./partials/footer'); %>
+    </main>
+</body>
+<script>
+    // The value for 'accessToken' begins with 'pk...'
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZG91bmduYXB0MjciLCJhIjoiY2xndnRkZTNoMDZ4aTNocHNkODFoajBuayJ9.YC-qEWe5KFnaiBkAkBnz4g'; 
+        const map = new mapboxgl.Map({
+        container: 'map',
+        // Replace YOUR_STYLE_URL with your style URL.
+        style: 'mapbox://styles/doungnapt27/clgvufwft007301r087vvhxf5', 
+        // center: [13.797,100.323],
+        // zoom: 16.64
+        });
+</script>
+</html>

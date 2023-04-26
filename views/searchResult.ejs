@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <title>Shop page - Little gift</title>
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+
+<body>
+    <header class="w-screen sticky z-50 top-0 ">
+        <%- include('./partials/nav'); %>
+    </header>
+    <main class="relative mt-[-64px] bg-[#FBF5F1] h-full w-full">
+        <!-- banner -->
+        <banner class="flex flex-col items-center justify-center pt-[64px]">
+            <div class="flex flex-col items-center justify-center h-[300px] m-10 bg-white rounded-[40px] w-[90%]">
+                <div class="flex flex-col items-center justify-center">
+                    <h1 class="text-4xl font-bold text-center text-[#2D2D2D]">Shop</h1>
+                    <p class="text-[#2D2D2D]">Search Result</p>
+                </div>
+            </div>
+        </banner>
+        <!-- product -->
+        <!-- sidebar with product category -->
+        <div class="flex flex-col md:flex-row h-screen ">
+
+            <!-- product list -->
+            <div class="flex flex-col w-full md:w-3/4">
+                <div class="flex flex-row items-start justify-center h-[300px]  rounded-[40px] w-[100vw]">
+                    <div class="flex flex-row items-start justify-start gap-3 flex-wrap">
+                        <!-- log -->
+
+                        <% for (let i=0; i < products.length; i++) { %>
+                            <div
+                                class="relative flex flex-col pt-3 items-start justify-center w-[245px] h-[310px] bg-[#FFFFFF] rounded-[30px] drop-shadow-lg">
+                                <!-- product image -->
+                                <div class="self-center rounded-[30px] border-2 border-solid border-[#2E7DE8]">
+                                    <% if (products[i].image && typeof products[i].image.data !=='undefined' ) { %>
+                                        <% const base64Image=Buffer.from(products[i].image.data).toString('base64'); %>
+                                            <img src="data:image/png;base64,<%= base64Image %>"
+                                                alt="<%= products[i].name %>"
+                                                class="w-[200px] h-[200px] object-fill rounded-[30px]">
+                                            <% } else { %>
+                                                <img src="../../assets/images/No_Image_Available.jpg"
+                                                    alt="<%= products[i].name %>"
+                                                    class="w-[200px] h-[200px] object-fill rounded-[30px]">
+                                                <% } %>
+
+                                </div>
+                                <!-- product detail -->
+                                <div class="space-between items-start flex flex-col pl-[20px] pt-[10px]">
+                                    <!-- product name -->
+                                    <div class="text-[#2E7DE8] text-lg font-semibold">
+                                        <%= products[i].name %>
+                                    </div>
+                                    <!-- product description -->
+                                    <div class="text-[#2E7DE8]">Price: <%= products[i].price %> THB</div>
+                                </div>
+                                <a href="/shop/product/<%= products[i].idproduct_info %>"
+                                    class="absolute bottom-3 right-3 text-4xl bg-[#2E7DE8] text-center self-end px-[10px] pb-1 rounded-md text-white">
+                                    + </a>
+                            </div>
+                            <% } %>
+                                <% if (products.length==0) { %>
+                                    <div
+                                        class="flex flex-col items-center justify-center h-[300px] m-10 bg-white rounded-[40px] w-[90%]">
+                                        <div class="flex flex-col items-center justify-center">
+                                            <h1 class="text-4xl font-bold text-center text-[#2D2D2D]">No Result</h1>
+                                            <p class="text-[#2D2D2D]">Please try again</p>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                    </div>
+                    <!-- comment multiline -->
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- footer color #657AAA -->
+        <!-- <img class="-z-10 absolute overflow-hidden w-full left-0 right-0 bottom-[19vh]"  src="../assets/images/footer-decorate.png" > -->
+        <%- include('./partials/footer'); %>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us page - Little gift</title>
+    <link rel="stylesheet" href="../dist/output.css">
+
+</head>
+<body>
+    <!-- navbar -->
+    <header class="w-screen sticky z-50 top-0 ">
+        <%- include('./partials/nav'); %>
+    </header>
+    <!-- end navbar -->
+    <!-- Content -->
+    <main class="relative mt-[-64px] pt-[64px] h-screen w-screen bg-gradient-to-b from-navy-700 overflow-hidden">
+        <!-- bring to front -->
+        <div class="absolute flex flex-row w-screen m-10 align-baseline items-center">
+            <div class="flex-shrink-0  bg-[#75aae362] rounded-xl w-fit shadow-md  hover:scale-110 hover:bg-[#94c3f762] origin-center hover:rotate-6 transition-all">
+                <img class="w-fit items-center drop-shadow-2xl" src="../assets/images/about-us-meng.png">
+            </div>
+            <div class=" h-auto pr-10 mx-10 flex flex-col w-[60%]">
+                <h1 class="self-end pr-24 text-5xl underline font-bold text-[#2F4F72] hover:drop-shadow-md">Who am I</h1>
+                <br>
+                <h2 class="text-4xl drop-shadow-md text-[#1E5DE0] transition-all">Kontawat Wisetpaitoon</h2>
+                <br>
+                <p class="text-lg font-normal drop-shadow-lg text-[#6e99f6]">
+                    Meet Kontawat Wisetpaitoon, the creative mind behind our handmade shop website from Phrae Province. As a student in web programming, Kontawat has utilized their skills and passion for web design to bring online shop to life. With a love for all things handmade, Kontawat has worked tirelessly to curate a selection of unique and high-quality items that showcase the talent of local artisans in Phrae Province, Kontawat is dedicated to sharing the beauty and culture of this region with the world through our online store. Whether you're a fan of handmade goods or simply looking for something special, we invite you to explore our selection and see for yourself the talent and artistry that Kontawat has brought to our online shop.
+                </p>
+            </div>
+        </div>
+        
+        <div class="absolute w-full h-full -z-10">
+            <div class="fixed h-[60%] w-full pt-[64px] ">
+                <div class="w-full object-none">
+                    <img class="absolute w-full h-full" src="../assets/images/bg-about-us.png">
+                </div>
+            </div>
+        </div>    
+        <img class="-z-10 fixed overflow-hidden w-full left-0 right-0 bottom-0"  src="../assets/images/footer-decorate.png" >
+        
+    </main>
+</body>
+</html>

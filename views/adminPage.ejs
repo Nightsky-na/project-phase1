@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User management page - Little gift</title>
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <%- include('./partials/navAdmin') %>
+    <!-- content -->
+    <main class="relative mt-[-64px] bg-[#FBF5F1] h-[100vh] w-full">
+        <div class="bg-gradient-to-b from-navy-700 z-10 w-screen h-full pt-[64px]">
+            <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                <div class="flex flex-row items-center justify-between" >
+                    <!-- admin name -->
+                    <div class="flex flex-row gap-5 items-center">
+                        <div class="w-[50px] h-[5 0px]">
+                            <img src="../assets/logo/adminProfile.png" alt="" srcset="">
+                        </div>
+                        <div class="text-lg font-semibold text-[#657AAA]">
+                            Admin: Kontawat Wisetpaitoon
+                        </div>
+                    </div>
+                    <!-- btn add user -->
+                    <div>
+                        <a class="text-white bg-[#2E7DE8] p-2 rounded-[5px] shadow-md mx-3 transition delay-150 duration-300  hover:border-white hover:border-2 hover:ease-in-out" href="/admin/user-add" >Add User +</a>
+                    </div>
+                </div>
+                <!-- Table user  -->
+                <div class="mt-5 mx-5 text-xl text-[#38435d] underline font-semibold">
+                    <h1>User management</h1>
+                </div>
+                <div class="px-4 py-6 sm:px-0 ">
+                    <div class="relative rounded-xl overflow-auto bg-white">
+                        <div class="shadow-sm overflow-auto my-8 rounded-[20px] h-[50%]">
+                            <table class="border-collapse table-auto w-full text-sm overflow-auto">
+                                <thead>
+                                    <tr class="pt-10">
+                                        <th
+                                            class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">
+                                            No.</th>
+                                        <th
+                                            class="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">
+                                            Profile</th>
+                                        <th
+                                            class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">
+                                            Email</th>
+                                        <th
+                                            class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white dark:bg-slate-800">
+                                    <% for( let index = 0; index < users.length; index++ ) { %>
+                                        <tr>
+                                            <% let index_show = index + 1%>
+                                            <td
+                                                class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
+                                                <%= index_show %>.</td>
+                                            <td
+                                                class="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+                                                <%= users[index].fname%> <%= users[index].lname  %></td>
+                                            <td
+                                                class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
+                                                <%= users[index].email%></td>
+                                            <td
+                                                class="flex flex-row justify-center items-center border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
+                                                <button  onclick="location.href='/admin/user-edit?product_id=<%=users[index].ID %>'"
+                                                        
+                                                class="flex flex-row gap-2 items-center border-solid border-[#4F5C90] border-2 rounded-[5px] p-2 mx-2 hover:bg-[#DDFFDE] ">
+                                                    <!-- import svg -->
+                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 2V5H5V7H0V2H2Z" fill="#4CAF50"/>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.88704 6.90083C1.34749 6.78291 1.00569 6.24993 1.12361 5.71038C1.83584 2.45144 5.05512 0.38693 8.31406 1.09917C11.573 1.81141 13.6375 5.03068 12.9253 8.28962C12.213 11.5486 8.99375 13.6131 5.73481 12.9008L4.75787 12.6873L5.18489 10.7334L6.16183 10.9469C8.34167 11.4233 10.495 10.0424 10.9714 7.8626C11.4478 5.68276 10.0669 3.52945 7.88704 3.05305C5.7072 2.57665 3.55389 3.95756 3.07749 6.1374C2.95957 6.67695 2.42659 7.01875 1.88704 6.90083Z" fill="#4CAF50"/>
+                                                    </svg>
+                                                        
+                                                    <span>Edit</span>
+                                                </button>
+                                                <button onclick="confirmDelete('<%=users[index].ID %>') "
+                                                class="flex flex-row gap-2 items-center border-solid border-[#4F5C90] border-2 rounded-[5px] p-2 mx-2 hover:bg-[#FFDFDF] ">
+                                                    <!-- import svg -->
+                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10 6H4L4 12H10V6ZM2 4V12C2 13.1046 2.89543 14 4 14H10C11.1046 14 12 13.1046 12 12V4H2Z" fill="#D77171"/>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10 4H4L4 2L10 2V4ZM2 6V2C2 0.895431 2.89543 0 4 0H10C11.1046 0 12 0.89543 12 2V6H2Z" fill="#D77171"/>
+                                                        <path d="M0 4H14V6H0V4Z" fill="#D77171"/>
+                                                        <path d="M8 5L8 13L6 13L6 5L8 5Z" fill="#D77171"/>
+                                                        </svg>
+                                                    <span>Delete</span>
+                                                </button>
+    
+                                            </td>
+                                        </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- /End replace -->
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    function confirmDelete(id) {
+    if (window.confirm("Are you sure?")) {
+        // Call the API to delete the item
+        // You can replace the URL with the endpoint of your API
+        fetch('http://localhost:3001/user/delete-user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id: id })
+        })
+        .then(response => {
+            if (response.ok) {
+                // Item was deleted successfully
+                alert('User deleted!');
+                location.reload();
+            } else {
+                // Handle error
+                alert('Error deleting user');
+            }
+        })
+        .catch(error => {
+            console.error('Error deleting user:', error);
+            alert('Error deleting user');
+        });
+    }
+}
+
+</script>
+</html>

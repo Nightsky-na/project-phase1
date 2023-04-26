@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <title>Shop page - Little gift</title>
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+
+<body class="overflow-x-hidden">
+    <header class="w-screen sticky z-50 top-0 ">
+        <%- include('./partials/nav'); %>
+    </header>
+    <main class="relative mt-[-64px]">
+        <div class="bg-gradient-to-b from-[#C7DAFD] to-[#FBF5F1] z-30 w-screen h-[170vh]">
+            <div class="flex flex-col justify-center items-center w-screen h-screen">
+                <!-- logo -->
+                <div
+                    class="transition-all md:mt-[20%] lg:mt-[10%] mb-[7%] justify-center flex flex-row px-[-10px]">
+                    <img class="w-[50%]" src="../assets/images/nantarat-little-gift-logo.png" alt="" srcset="">
+                </div>
+                <!-- search -->
+                <div class="flex flex-col justify-center items-center w-[90%]">
+                    <form class="w-full flex flex-col justify-center items-center" action='/search/' method="post">
+                        <div class="flex flex-row items-center w-[50%]">
+                            <label for="default-search"
+                                class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                            <div class="relative w-full">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </div>
+                                <input type="search" id="default-search" name="search-box"
+                                    class="block w-[80%] p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Search..." required>
+                            </div>
+                        </div>
+                        <div class="flex gap-5 align-middle text-center items-baseline w-[50%]">
+                            <select
+                                class="block w-full mt-1 rounded-md bg-[#ffffff00] border-[#657AAA]  focus:border-gray-500  focus:ring-0"
+                                name="search-criteria">
+                                <option value="name">Name</option>
+                                <option value="id">ID</option>
+                                <!-- <option value="type">Type</option> -->
+                                <option value="description">Description</option>
+                            </select>
+                            <select
+                                name="search-category"
+                                class="block w-full mt-1 rounded-md bg-[#ffffff00] border-[#657AAA]  focus:border-gray-500  focus:ring-0">
+                                <option value="all" class="text-[#BCBEC0]" selected >All categories</option>
+                                <option value="keychain">Keychain</option>
+                                <option value="accessories">Accessories</option>
+                                <option value="bag">Bag</option>
+                                <!-- <option>All categories</option> -->
+                                <option value="other">Orther</option>
+                            </select>
+                            <button type="submit"
+                                class="text-white w-fit mt-4 right-2.5 bottom-2.5 bg-[#2E7DE8] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <img class="z-10 absolute overflow-hidden w-full left-0 right-0 bottom-[19vh]"
+            src="../assets/images/footer-decorate.png">
+            <%- include('./partials/footer'); %>
+    </main>
+</body>
+
+</html>
